@@ -1,0 +1,521 @@
+<!--
+ * @Description: 
+ * @Date: 2024-12-05 00:38:02
+ * @LastEditTime: 2024-12-05 23:15:10
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>丽蓉，生日快乐</title>
+    <style type="text/css">
+      @keyframes circlemusic {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .musicbox {
+        animation: circlemusic 10s linear infinite;
+      }
+      body {
+        background-color: black;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .time {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: space-around;
+        align-items: center;
+        /* gap:4px */
+      }
+      .time div {
+        padding: 5px;
+        background: white;
+        /* width: 50px; */
+        height: 25px;
+      }
+      .text {
+        font-size: 18px;
+        font-weight: bold;
+        font-style: italic;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: fixed; top: 0; left: 0; transform: rotate(30deg)">
+      <img src="./蛋糕.png" alt="" width="300" />
+    </div>
+    <div style="position: fixed; top: 80px; right: 0">
+      <audio id="audio" controls loop style="display: none">
+        <source src="./Happy Birthday.mp3" type="audio/mpeg" />
+      </audio>
+      <div
+        id="musicbox"
+        style="
+          width: 50px;
+          height: 50px;
+          background-color: rgb(192, 190, 190);
+          border-radius: 50%;
+          line-height: 50px;
+          text-align: center;
+        "
+      >
+        <span span="20px">🎵</span>
+      </div>
+      <div style="margin-top: 10px">
+        <button id="play" style="display: 'inline-block'">播放</button>
+        <button id="pase" style="display: none">暂停</button>
+      </div>
+    </div>
+    <div
+      style="
+        position: absolute;
+        width: 400px;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        transform: scale(2);
+      "
+    >
+      <div style="text-align: center">
+        <img src="./R-C.jpg" alt="" width="200" />
+      </div>
+      <div
+        class="text"
+        style="display: flex; justify-content: center; margin-bottom: 10px"
+      >
+        <div
+          style="
+            text-align: center;
+            width: 65px;
+            height: 30px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+          "
+        >
+          Happy
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 90px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          Birthday
+        </div>
+      </div>
+      <div
+        class="text"
+        style="display: flex; justify-content: center; margin-bottom: 10px"
+      >
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          生
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          日
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          快
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          乐
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          !
+        </div>
+      </div>
+      <div
+        class="text"
+        style="display: flex; justify-content: center; margin-bottom: 10px"
+      >
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          天
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          天
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          开
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          心
+        </div>
+        <div
+          style="
+            text-align: center;
+            width: 55px;
+            background: rgb(255, 116, 116);
+            color: rgb(255, 243, 134);
+            height: 30px;
+          "
+        >
+          !
+        </div>
+      </div>
+      <div class="time text" style="text-align: center">
+        <div
+          style="background: rgb(255, 116, 116); color: rgb(255, 243, 134)"
+          id="Y"
+        ></div>
+        <div
+          style="background: rgb(255, 116, 116); color: rgb(255, 243, 134)"
+          id="D"
+        ></div>
+        <div
+          style="background: rgb(255, 116, 116); color: rgb(255, 243, 134)"
+          id="H"
+        ></div>
+        <div
+          style="background: rgb(255, 116, 116); color: rgb(255, 243, 134)"
+          id="M"
+        ></div>
+        <div
+          style="background: rgb(255, 116, 116); color: rgb(255, 243, 134)"
+          id="S"
+        ></div>
+      </div>
+    </div>
+    <canvas id="stars"></canvas>
+    <script>
+      var music = document.getElementById("audio");
+      var play = document.getElementById("play");
+      var pase = document.getElementById("pase");
+      var musicbox = document.getElementById("musicbox");
+      play.addEventListener("click", onplay);
+      pase.addEventListener("click", onpase);
+      function onplay() {
+        play.style.display = "none";
+        pase.style.display = "";
+        music.play();
+        musicbox.classList.add("musicbox");
+      }
+      function onpase() {
+        play.style.display = "";
+        pase.style.display = "none";
+        audio.pause();
+        musicbox.classList.remove("musicbox");
+      }
+
+      setInterval(() => {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var startTime = new Date(2024, 12, 6);
+        var endTime = new Date(year, month, day, hour, minute, second);
+        var time = endTime - startTime;
+        var y = 25 + parseInt(time / (24 * 3600 * 1000 * 365));
+        var leave = time % (24 * 3600 * 1000 * 365);
+        var days = parseInt(leave / (24 * 3600 * 1000));
+        var leave1 = time % (24 * 3600 * 1000);
+        var hours = parseInt(leave1 / (3600 * 1000));
+        var leave2 = leave1 % (3600 * 1000);
+        var minutes = parseInt(leave2 / (60 * 1000));
+        var leave3 = leave2 % (60 * 1000);
+        var seconds = parseInt(leave3 / 1000);
+        var str =
+          "" +
+          y +
+          "年" +
+          days +
+          "天" +
+          hours +
+          "小时" +
+          minutes +
+          "分" +
+          seconds +
+          "秒";
+        document.getElementById("Y").innerHTML = y + "岁";
+        document.getElementById("D").innerHTML = days + "天";
+        document.getElementById("H").innerHTML = hours + "时";
+        document.getElementById("M").innerHTML = minutes + "分";
+        document.getElementById("S").innerHTML = seconds + "秒";
+        // document.getElementsByClassName("time")[0].innerHTML = str;
+      }, 1000);
+
+      var context;
+      var arr = new Array();
+      var starCount = 800;
+      var rains = new Array();
+      var rainCount = 20;
+      //初始化画布及context
+      function init() {
+        //获取canvas
+        var stars = document.getElementById("stars");
+        windowWidth = window.innerWidth; //当前的窗口的高度
+        stars.width = windowWidth;
+        stars.height = window.innerHeight;
+        //获取context
+        context = stars.getContext("2d");
+      }
+      //创建一个星星对象
+      var Star = function () {
+        this.x = windowWidth * Math.random(); //横坐标
+        this.y = 5000 * Math.random(); //纵坐标
+        this.text = "."; //文本
+        this.color = "white"; //颜色
+        //产生随机颜色
+        this.getColor = function () {
+          var _r = Math.random();
+          if (_r < 0.5) {
+            this.color = "#333";
+          } else {
+            this.color = "white";
+          }
+        };
+        //初始化
+        this.init = function () {
+          this.getColor();
+        };
+        //绘制
+        this.draw = function () {
+          context.fillStyle = this.color;
+          context.fillText(this.text, this.x, this.y);
+        };
+      };
+      //画月亮
+      function drawMoon() {
+        var moon = new Image();
+        moon.src = "./images/moon.jpg";
+        context.drawImage(moon, -5, -10);
+      }
+      //页面加载的时候
+      window.onload = function () {
+        init();
+        //画星星
+        for (var i = 0; i < starCount; i++) {
+          var star = new Star();
+          star.init();
+          star.draw();
+          arr.push(star);
+        }
+        //画流星
+        for (var i = 0; i < rainCount; i++) {
+          var rain = new MeteorRain();
+          rain.init();
+          rain.draw();
+          rains.push(rain);
+        }
+        drawMoon(); //绘制月亮
+        playStars(); //绘制闪动的星星
+        playRains(); //绘制流星
+      };
+      //星星闪起来
+      function playStars() {
+        for (var n = 0; n < starCount; n++) {
+          arr[n].getColor();
+          arr[n].draw();
+        }
+
+        setTimeout("playStars()", 100);
+      }
+
+      /*流星雨开始*/
+      var MeteorRain = function () {
+        this.x = -1;
+        this.y = -1;
+        this.length = -1; //长度
+        this.angle = 30; //倾斜角度
+        this.width = -1; //宽度
+        this.height = -1; //高度
+        this.speed = 1; //速度
+        this.offset_x = -1; //横轴移动偏移量
+        this.offset_y = -1; //纵轴移动偏移量
+        this.alpha = 1; //透明度
+        this.color1 = ""; //流星的色彩
+        this.color2 = ""; //流星的色彩
+        /****************初始化函数********************/
+        this.init = function () //初始化
+        {
+          this.getPos();
+          this.alpha = 1; //透明度
+          this.getRandomColor();
+          //最小长度，最大长度
+          var x = Math.random() * 80 + 150;
+          this.length = Math.ceil(x);
+          // x = Math.random()*10+30;
+          this.angle = 30; //流星倾斜角
+          x = Math.random() + 0.5;
+          this.speed = Math.ceil(x); //流星的速度
+          var cos = Math.cos((this.angle * 3.14) / 180);
+          var sin = Math.sin((this.angle * 3.14) / 180);
+          this.width = this.length * cos; //流星所占宽度
+          this.height = this.length * sin; //流星所占高度
+          this.offset_x = this.speed * cos;
+          this.offset_y = this.speed * sin;
+        };
+        /**************获取随机颜色函数*****************/
+        this.getRandomColor = function () {
+          var a = Math.ceil(255 - 240 * Math.random());
+          //中段颜色
+          this.color1 = "rgba(" + a + "," + a + "," + a + ",1)";
+          //结束颜色
+          this.color2 = "black";
+        };
+        /***************重新计算流星坐标的函数******************/
+        this.countPos = function () //
+        {
+          //往左下移动,x减少，y增加
+          this.x = this.x - this.offset_x;
+          this.y = this.y + this.offset_y;
+        };
+        /*****************获取随机坐标的函数*****************/
+        this.getPos = function () //
+        {
+          //横坐标200--1200
+          this.x = Math.random() * window.innerWidth; //窗口高度
+          //纵坐标小于600
+          this.y = Math.random() * window.innerHeight; //窗口宽度
+        };
+        /****绘制流星***************************/
+        this.draw = function () //绘制一个流星的函数
+        {
+          context.save();
+          context.beginPath();
+          context.lineWidth = 1; //宽度
+          context.globalAlpha = this.alpha; //设置透明度
+          //创建横向渐变颜色,起点坐标至终点坐标
+          var line = context.createLinearGradient(
+            this.x,
+            this.y,
+            this.x + this.width,
+            this.y - this.height
+          );
+          //分段设置颜色
+          line.addColorStop(0, "white");
+          line.addColorStop(0.3, this.color1);
+          line.addColorStop(0.6, this.color2);
+          context.strokeStyle = line;
+          //起点
+          context.moveTo(this.x, this.y);
+          //终点
+          context.lineTo(this.x + this.width, this.y - this.height);
+          context.closePath();
+          context.stroke();
+          context.restore();
+        };
+        this.move = function () {
+          //清空流星像素
+          var x = this.x + this.width - this.offset_x;
+          var y = this.y - this.height;
+          context.clearRect(x - 3, y - 3, this.offset_x + 5, this.offset_y + 5);
+          // context.strokeStyle="red";
+          // context.strokeRect(x,y-1,this.offset_x+1,this.offset_y+1);
+          //重新计算位置，往左下移动
+          this.countPos();
+          //透明度增加
+          this.alpha -= 0.002;
+          //重绘
+          this.draw();
+        };
+      };
+      //绘制流星
+      function playRains() {
+        for (var n = 0; n < rainCount; n++) {
+          var rain = rains[n];
+          rain.move(); //移动
+          if (rain.y > window.innerHeight) {
+            //超出界限后重来
+            context.clearRect(
+              rain.x,
+              rain.y - rain.height,
+              rain.width,
+              rain.height
+            );
+            rains[n] = new MeteorRain();
+            rains[n].init();
+          }
+        }
+        setTimeout("playRains()", 2);
+      }
+      /*流星雨结束*/
+    </script>
+  </body>
+</html>
